@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+}
+
+.glass-panel {
+  @apply bg-black/50 backdrop-blur-sm border border-neon-blue/20 rounded-lg shadow-lg;
+}
+
+.button-neon {
+  @apply px-6 py-3 rounded-lg bg-black/50 backdrop-blur-sm border border-neon-blue text-neon-blue 
+         hover:bg-neon-blue/10 hover:text-white transition-all duration-300
+         focus:outline-none focus:ring-2 focus:ring-neon-blue focus:ring-offset-2 focus:ring-offset-black;
+}
+
+@layer components {
+  .neon-border {
+    @apply relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-neon-blue before:via-neon-purple before:to-neon-green before:rounded-lg before:p-[1px] before:z-0;
+  }
+  
+  .neon-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green;
+  }
+
+  .cyber-button {
+    @apply px-6 py-3 rounded-lg bg-darker-bg neon-border hover:scale-105 transition-transform duration-200;
+  }
+
+  .terminal-window {
+    @apply bg-darker-bg rounded-lg p-4 font-code text-sm neon-border;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-darker-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neon-blue/30 rounded-full hover:bg-neon-blue/50 transition-colors duration-300;
+} 

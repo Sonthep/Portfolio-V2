@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useMatrixRain } from '../MatrixRainContext';
 
 const terminalLines = [
   'Initializing portfolio...',
@@ -14,6 +15,7 @@ export const HeroSection = () => {
   const [currentLine, setCurrentLine] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [showContent, setShowContent] = useState(false);
+  const { setShowMatrixRain } = useMatrixRain();
 
   useEffect(() => {
     const typeText = async () => {
@@ -27,15 +29,20 @@ export const HeroSection = () => {
           await new Promise(resolve => setTimeout(resolve, 50));
         }
         await new Promise(resolve => setTimeout(resolve, 500));
+        
+        // Show matrix rain after "System ready" is displayed
+        if (line === 'System ready.') {
+          setShowMatrixRain(true);
+        }
       }
       setShowContent(true);
     };
 
     typeText();
-  }, []);
+  }, [setShowMatrixRain]);
 
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center relative">
+    <section id="home" className="min-h-screen flex flex-col justify-center items-center relative">
       {/* Grid background with glow effect */}
       <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-10" />
       
@@ -73,9 +80,18 @@ export const HeroSection = () => {
           <p className="text-xl mb-8 text-gray-300">
             I design and build web applications
           </p>
-          <button className="button-neon">
-            View My Work
-          </button>
+          <div className="flex gap-4 justify-center">
+            <button className="button-neon">
+              View My Work
+            </button>
+            <a
+              href="/resume.pdf"
+              download
+              className="button-neon bg-transparent border-2 border-neon-purple hover:bg-neon-purple/20 transition-colors"
+            >
+              Download Resume
+            </a>
+          </div>
         </motion.div>
       )}
     </section>

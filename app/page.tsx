@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { HeroSection } from '@/app/components/sections/HeroSection';
-import { AboutSection } from '@/app/components/sections/AboutSection';
-import { ProjectsSection } from '@/app/components/sections/ProjectsSection';
+import { HeroSection } from './components/sections/HeroSection';
+import { AboutSection } from './components/sections/AboutSection';
+import { ProjectsSection } from './components/sections/ProjectsSection';
 import { TechStackSection } from '@/app/components/sections/TechStackSection';
-import { ContactSection } from '@/app/components/sections/ContactSection';
+import { ContactSection } from './components/sections/ContactSection';
 import { Footer } from '@/app/components/Footer';
 
 export default function Home() {

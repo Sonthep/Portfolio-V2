@@ -2,7 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import MatrixRain from './components/MatrixRain';
+import MainContent from './components/MainContent';
+import Navbar from './components/Navbar';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,10 +23,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} bg-black text-white`}>
-        <MatrixRain />
-        <main className="min-h-screen relative">
+        <MainContent>
+          <Navbar />
           {children}
-        </main>
+        </MainContent>
       </body>
     </html>
   );

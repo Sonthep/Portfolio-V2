@@ -2,21 +2,22 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FiMail, FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FiMail } from 'react-icons/fi';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const socialLinks = [
   {
-    icon: FiGithub,
+    icon: FaGithub,
     href: 'https://github.com/yourusername',
     label: 'GitHub',
   },
   {
-    icon: FiLinkedin,
+    icon: FaLinkedin,
     href: 'https://linkedin.com/in/yourusername',
     label: 'LinkedIn',
   },
   {
-    icon: FiTwitter,
+    icon: FaTwitter,
     href: 'https://twitter.com/yourusername',
     label: 'Twitter',
   },
@@ -29,21 +30,19 @@ export const ContactSection = () => {
     message: '',
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log(formData);
+  };
+
   return (
-    <section className="py-20 relative">
+    <section id="contact" className="py-20 relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -120,7 +119,7 @@ export const ContactSection = () => {
 
               <button
                 type="submit"
-                className="button-neon w-full"
+                className="w-full button-neon"
               >
                 Send Message
               </button>

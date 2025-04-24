@@ -85,8 +85,8 @@ export const HeroSection = () => {
               View My Work
             </button>
             <a
-              href="/resume.pdf"
-              download
+              href="https://raw.githubusercontent.com/Sonthep/pdf_file/main/Developer%20Resume.pdf"
+              download="Developer Resume.pdf"
               className="button-neon bg-transparent border-2 border-neon-purple hover:bg-neon-purple/20 transition-colors"
             >
               Download Resume

@@ -19,42 +19,21 @@ export const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="glass-panel p-8 relative z-10"
         >
-          <h2 className="text-3xl font-bold mb-8 neon-text">About Me</h2>
+          <h2 className="text-3xl font-bold mb-8 neon-text text-center">About Me</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Bio */}
-            <div>
-              <p className="text-gray-300 mb-6">
-                I'm a passionate Full Stack Developer with a love for creating elegant solutions
-                to complex problems. With expertise in modern web technologies, I build
-                scalable and performant applications that users love.
-              </p>
-              <p className="text-gray-300">
-                My journey in tech started with a curiosity about how things work,
-                which evolved into a career crafting digital experiences that make a difference.
-              </p>
+          <div className="flex justify-center">
+            {/* Profile Image */}
+            <div className="flex justify-center items-start">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-neon-purple to-neon-blue rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative">
+                  <img
+                    src="/profile/profile resume.jpg"
+                    alt="Profile"
+                    className="w-64 h-64 object-cover rounded-lg border-2 border-neon-purple"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-darker-bg to-transparent opacity-50 rounded-lg"></div>
             </div>
-
-            {/* Skills */}
-            <div>
-              <h3 className="text-xl font-bold mb-4 text-neon-purple">Skills & Technologies</h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill, index) => (
-                  <motion.div
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.3,
-                      delay: index * 0.1,
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    className="px-4 py-2 rounded-full neon-border text-sm"
-                  >
-                    {skill}
-                  </motion.div>
-                ))}
               </div>
             </div>
           </div>
@@ -64,22 +43,22 @@ export const AboutSection = () => {
             <h3 className="text-xl font-bold mb-6 text-neon-purple">Experience</h3>
             <div className="space-y-6">
               <TimelineItem
-                year="2022 - Present"
-                title="Senior Full Stack Developer"
-                company="Tech Innovators Inc."
-                description="Leading development of enterprise web applications"
+                year="Mar 2024 – Nov 2024"
+                title="Kissflow Developer (CRM System)"
+                company="VBix Innovation Co., Ltd / Nonthaburi"
+                description="Developed and customized a CRM system for solar panel customer management using Kissflow platform. Integrated approval flows, customer onboarding processes, and real-time dashboard reports. Built custom logic for follow-ups, quotations, and service requests. Delivered system training and user support."
               />
               <TimelineItem
-                year="2020 - 2022"
-                title="Full Stack Developer"
-                company="Digital Solutions Ltd."
-                description="Built and maintained multiple client projects"
+                year="June 2022 – Nov 2022"
+                title="Programmer C# Developer"
+                company="Thai-German Specialty Glass Co., Ltd. (TGSG) / Bangkok"
+                description="Designed and developed internal web applications for generating automated invoice and receipt reports. Utilized ASP.NET Framework, C#, Bootstrap 5, and SQL Server. Automated financial reporting processes and built responsive UI with real-time data access."
               />
               <TimelineItem
-                year="2018 - 2020"
-                title="Frontend Developer"
-                company="Creative Web Agency"
-                description="Developed responsive web interfaces"
+                year="July 2021 – October 2021"
+                title="Front End Developer Intern"
+                company="Coding advisor Co., Ltd / Bangkok"
+                description="Developed front-end websites using HTML, CSS, and JavaScript. Collaborated with designers to translate mockups into functional websites. Worked on front-end and back-end systems across various platforms."
               />
             </div>
           </div>

@@ -2,24 +2,19 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FiMail } from 'react-icons/fi';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FiMail, FiPhone } from 'react-icons/fi';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const socialLinks = [
   {
     icon: FaGithub,
-    href: 'https://github.com/yourusername',
+    href: 'https://github.com/Sonthep',
     label: 'GitHub',
   },
   {
     icon: FaLinkedin,
     href: 'https://linkedin.com/in/yourusername',
     label: 'LinkedIn',
-  },
-  {
-    icon: FaTwitter,
-    href: 'https://twitter.com/yourusername',
-    label: 'Twitter',
   },
 ];
 
@@ -54,111 +49,54 @@ export const ContactSection = () => {
             Get In Touch
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <motion.form
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              onSubmit={handleSubmit}
-              className="glass-panel p-8 space-y-6"
-            >
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 bg-darker-bg/50 border border-neon-blue/20 rounded-md 
-                    focus:border-neon-blue focus:ring-1 focus:ring-neon-blue outline-none
-                    text-white placeholder-gray-400"
-                  placeholder="John Doe"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 bg-darker-bg/50 border border-neon-blue/20 rounded-md 
-                    focus:border-neon-blue focus:ring-1 focus:ring-neon-blue outline-none
-                    text-white placeholder-gray-400"
-                  placeholder="john@example.com"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full px-4 py-2 bg-darker-bg/50 border border-neon-blue/20 rounded-md 
-                    focus:border-neon-blue focus:ring-1 focus:ring-neon-blue outline-none
-                    text-white placeholder-gray-400 resize-none"
-                  placeholder="Your message here..."
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full button-neon"
-              >
-                Send Message
-              </button>
-            </motion.form>
-
+          <div className="grid md:grid-cols-1 gap-12">
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-panel p-8 space-y-8"
+              className="glass-panel p-8 space-y-8 max-w-md mx-auto"
             >
               <div>
-                <h3 className="text-xl font-bold mb-4 text-neon-purple">
+                <h3 className="text-xl font-bold mb-4 text-neon-purple text-center">
                   Let's Connect
                 </h3>
-                <p className="text-gray-300">
+                <p className="text-gray-300 text-center">
                   Feel free to reach out for collaborations or just a friendly hello!
                 </p>
               </div>
 
               <div>
-                <h4 className="text-sm font-medium text-gray-300 mb-4">
+                <h4 className="text-sm font-medium text-gray-300 mb-4 text-center">
                   Email
                 </h4>
                 <a
                   href="mailto:your.email@example.com"
-                  className="flex items-center gap-2 text-neon-blue hover:text-neon-purple transition-colors"
+                  className="flex items-center gap-2 text-neon-blue hover:text-neon-purple transition-colors justify-center"
                 >
                   <FiMail />
-                  your.email@example.com
+                  sonthep.simmalee@gmail.com
                 </a>
               </div>
 
               <div>
-                <h4 className="text-sm font-medium text-gray-300 mb-4">
+                <h4 className="text-sm font-medium text-gray-300 mb-4 text-center">
+                  Phone
+                </h4>
+                <a
+                  href="tel:+660645639903"
+                  className="flex items-center gap-2 text-neon-blue hover:text-neon-purple transition-colors justify-center"
+                >
+                  <FiPhone />
+                  0645639903
+                </a>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-medium text-gray-300 mb-4 text-center">
                   Social Links
                 </h4>
-                <div className="flex gap-4">
+                <div className="flex gap-4 justify-center">
                   {socialLinks.map(({ icon: Icon, href, label }) => (
                     <a
                       key={label}

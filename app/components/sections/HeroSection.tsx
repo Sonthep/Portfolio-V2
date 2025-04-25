@@ -80,10 +80,7 @@ export const HeroSection = () => {
           <p className="text-xl mb-8 text-gray-300">
             I design and build web applications
           </p>
-          <div className="flex gap-4 justify-center">
-            <button className="button-neon">
-              View My Work
-            </button>
+          <div className="flex justify-center">
             <a
               href="https://raw.githubusercontent.com/Sonthep/pdf_file/main/Developer%20Resume.pdf"
               download="Developer Resume.pdf"

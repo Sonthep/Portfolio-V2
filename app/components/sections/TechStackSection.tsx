@@ -6,12 +6,12 @@ import {
   SiNextdotjs,
   SiTypescript,
   SiNodedotjs,
-  SiMongodb,
+  SiPython,
   SiPostgresql,
-  SiDocker,
+  SiFirebase,
   SiGit,
   SiTailwindcss,
-  SiGraphql,
+  SiNestjs,
 } from 'react-icons/si';
 
 const techStack = [
@@ -19,12 +19,12 @@ const techStack = [
   { icon: SiNextdotjs, name: 'Next.js', color: '#ffffff' },
   { icon: SiTypescript, name: 'TypeScript', color: '#3178C6' },
   { icon: SiNodedotjs, name: 'Node.js', color: '#339933' },
-  { icon: SiMongodb, name: 'MongoDB', color: '#47A248' },
+  { icon: SiPython, name: 'Python', color: '#3776AB' },
   { icon: SiPostgresql, name: 'PostgreSQL', color: '#4169E1' },
-  { icon: SiDocker, name: 'Docker', color: '#2496ED' },
+  { icon: SiFirebase, name: 'Firebase', color: '#FFCA28' },
   { icon: SiGit, name: 'Git', color: '#F05032' },
   { icon: SiTailwindcss, name: 'Tailwind CSS', color: '#06B6D4' },
-  { icon: SiGraphql, name: 'GraphQL', color: '#E10098' },
+  { icon: SiNestjs, name: 'RESTful API', color: '#E0234E' },
 ];
 
 export const TechStackSection = () => {
